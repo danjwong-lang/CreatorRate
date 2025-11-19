@@ -69,3 +69,4 @@ src/
 │   └── influencers.js
 └── App.jsx          # Main app component with routing
 ```
+# Updated
