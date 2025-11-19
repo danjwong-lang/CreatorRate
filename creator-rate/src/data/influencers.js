@@ -13,6 +13,7 @@ export const influencers = [
     verified: true,
     tags: ["Fashion", "Beauty", "Lifestyle", "Vlogs"],
     engagement: "8.2%",
+    paidServices: false,
     reviews: [
       { id: 1, author: "Sarah M.", rating: 5, date: "2025-09-15", comment: "Kay's content is always so authentic and relatable! Her fashion tips are super helpful." },
       { id: 2, author: "Mike T.", rating: 4, date: "2025-09-10", comment: "Great content creator. Sometimes posts a bit too frequently but quality is consistently good." },
@@ -33,6 +34,7 @@ export const influencers = [
     verified: true,
     tags: ["Comedy", "Skits", "Entertainment"],
     engagement: "7.5%",
+    paidServices: false,
     reviews: [
       { id: 1, author: "Chris P.", rating: 5, date: "2025-09-12", comment: "Funniest guy on TikTok! His skits always make my day." },
       { id: 2, author: "Lisa K.", rating: 4, date: "2025-09-08", comment: "Really funny content. Would love to see more variety in the topics." },
@@ -53,6 +55,22 @@ export const influencers = [
     verified: true,
     tags: ["Business", "Sports", "Food Reviews", "Finance"],
     engagement: "6.8%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredPost: "$75K-$150K",
+      brandPartnership: "$200K-$500K",
+      eventAppearance: "$50K-$100K"
+    },
+    servicesOffered: [
+      "Sponsored Posts",
+      "Brand Partnerships",
+      "Event Appearances",
+      "Product Reviews",
+      "Speaking Engagements"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$50K+",
     reviews: [
       { id: 1, author: "Tom B.", rating: 5, date: "2025-09-18", comment: "One bite, everybody knows the rules! His pizza reviews are legendary." },
       { id: 2, author: "Rachel G.", rating: 3, date: "2025-09-14", comment: "Entertaining but can be polarizing. Not for everyone." },
@@ -73,6 +91,21 @@ export const influencers = [
     verified: true,
     tags: ["Cooking", "Recipes", "Food", "Home Chef"],
     engagement: "9.1%",
+    paidServices: true,
+    priceRange: "$$",
+    estimatedRates: {
+      sponsoredPost: "$15K-$30K",
+      recipeCreation: "$10K-$25K",
+      brandPartnership: "$40K-$80K"
+    },
+    servicesOffered: [
+      "Sponsored Recipe Videos",
+      "Brand Partnerships",
+      "Product Reviews",
+      "Cookbook Collaborations"
+    ],
+    responseTime: "3-5 days",
+    minimumBudget: "$10K+",
     reviews: [
       { id: 1, author: "Amanda W.", rating: 5, date: "2025-09-20", comment: "Her recipes are SO easy to follow and always turn out amazing!" },
       { id: 2, author: "Carlos M.", rating: 5, date: "2025-09-16", comment: "Best cooking content on TikTok. I've made dozens of her recipes." },
@@ -93,6 +126,7 @@ export const influencers = [
     verified: true,
     tags: ["Beauty", "Fashion", "Lifestyle", "GRWM"],
     engagement: "10.3%",
+    paidServices: false,
     reviews: [
       { id: 1, author: "Olivia P.", rating: 5, date: "2025-09-22", comment: "Alix is literally the coolest. Her GRWMs are everything!" },
       { id: 2, author: "Sophie T.", rating: 5, date: "2025-09-19", comment: "So relatable and genuine. Love her energy!" },
@@ -113,6 +147,22 @@ export const influencers = [
     verified: true,
     tags: ["Entertainment", "Challenges", "Philanthropy", "Gaming"],
     engagement: "12.5%",
+    paidServices: true,
+    priceRange: "$$$$",
+    estimatedRates: {
+      sponsoredVideo: "$2M-$3M",
+      brandIntegration: "$1M-$2M",
+      productLaunch: "$3M+"
+    },
+    servicesOffered: [
+      "Sponsored Videos",
+      "Brand Integrations",
+      "Product Launches",
+      "Charity Campaigns",
+      "Event Hosting"
+    ],
+    responseTime: "2-4 weeks",
+    minimumBudget: "$1M+",
     reviews: [
       { id: 1, author: "Marcus J.", rating: 5, date: "2025-09-25", comment: "The GOAT of YouTube. His generosity is unmatched." },
       { id: 2, author: "Priya S.", rating: 5, date: "2025-09-23", comment: "Changed the game for content creation. Incredible production quality." },
@@ -133,6 +183,22 @@ export const influencers = [
     verified: true,
     tags: ["Gaming", "Streaming", "Comedy", "IRL"],
     engagement: "11.2%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredStream: "$100K-$200K",
+      brandIntegration: "$75K-$150K",
+      gamePromotion: "$150K-$300K"
+    },
+    servicesOffered: [
+      "Sponsored Streams",
+      "Brand Integrations",
+      "Game Promotions",
+      "Product Reviews",
+      "Event Appearances"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$75K+",
     reviews: [
       { id: 1, author: "Tyler G.", rating: 5, date: "2025-09-24", comment: "Most entertaining streamer on Twitch. Never a dull moment!" },
       { id: 2, author: "Jordan W.", rating: 4, date: "2025-09-21", comment: "Great streams but can be a bit loud sometimes. Still love the content." },
@@ -153,14 +219,28 @@ export const influencers = [
     verified: true,
     tags: ["Gaming", "Entertainment", "IRL", "Sports"],
     engagement: "13.8%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredVideo: "$150K-$300K",
+      brandIntegration: "$100K-$200K",
+      eventAppearance: "$75K-$150K"
+    },
+    servicesOffered: [
+      "Sponsored Videos",
+      "Brand Integrations",
+      "Product Reviews",
+      "Event Appearances",
+      "Gaming Promotions"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$100K+",
     reviews: [
       { id: 1, author: "Nathan R.", rating: 5, date: "2025-09-26", comment: "Pure entertainment! His energy is insane!" },
       { id: 2, author: "Ethan M.", rating: 4, date: "2025-09-23", comment: "Very entertaining but not for everyone. High energy 24/7." },
       { id: 3, author: "Lucas D.", rating: 4, date: "2025-09-19", comment: "Genuine personality. Streams are always eventful." }
     ]
   },
-
-// New Influencers - IDs 9-27 (19 total)
   {
     id: 9,
     name: "Addison Rae",
@@ -175,6 +255,22 @@ export const influencers = [
     verified: true,
     tags: ["Dance", "Music", "Acting", "Fashion"],
     engagement: "2.7%",
+    paidServices: true,
+    priceRange: "$$$$",
+    estimatedRates: {
+      sponsoredPost: "$200K-$400K",
+      brandPartnership: "$500K-$1M",
+      musicCollaboration: "$300K-$600K"
+    },
+    servicesOffered: [
+      "Sponsored Posts",
+      "Brand Partnerships",
+      "Music Collaborations",
+      "Acting Roles",
+      "Event Appearances"
+    ],
+    responseTime: "2-3 weeks",
+    minimumBudget: "$200K+",
     reviews: [
       {
         id: 101,
@@ -213,6 +309,22 @@ export const influencers = [
     verified: true,
     tags: ["Finance", "Budgeting", "Investing", "Money Management"],
     engagement: "5.2%",
+    paidServices: true,
+    priceRange: "$$",
+    estimatedRates: {
+      sponsoredVideo: "$20K-$40K",
+      brandPartnership: "$30K-$60K",
+      consulting: "$5K-$10K"
+    },
+    servicesOffered: [
+      "Sponsored Videos",
+      "Brand Partnerships",
+      "Financial Consulting",
+      "Speaking Engagements",
+      "Course Promotion"
+    ],
+    responseTime: "1 week",
+    minimumBudget: "$15K+",
     reviews: [
       {
         id: 104,
@@ -251,6 +363,22 @@ export const influencers = [
     verified: true,
     tags: ["Fitness", "Workouts", "Health", "Wellness"],
     engagement: "4.8%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredVideo: "$80K-$150K",
+      brandPartnership: "$100K-$200K",
+      productLaunch: "$150K-$300K"
+    },
+    servicesOffered: [
+      "Sponsored Videos",
+      "Brand Partnerships",
+      "Product Launches",
+      "Fitness Program Collaborations",
+      "Apparel Deals"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$75K+",
     reviews: [
       {
         id: 107,
@@ -289,6 +417,23 @@ export const influencers = [
     verified: true,
     tags: ["Business Buying", "Entrepreneurship", "Investing", "Main Street"],
     engagement: "6.1%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredPost: "$40K-$80K",
+      brandPartnership: "$75K-$150K",
+      speakingEngagement: "$30K-$60K",
+      consulting: "$10K-$25K"
+    },
+    servicesOffered: [
+      "Sponsored Content",
+      "Brand Partnerships",
+      "Speaking Engagements",
+      "Business Consulting",
+      "Course Collaborations"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$30K+",
     reviews: [
       {
         id: 110,
@@ -327,6 +472,22 @@ export const influencers = [
     verified: true,
     tags: ["Chef", "Restaurants", "Cooking", "Food Culture"],
     engagement: "3.4%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredPost: "$50K-$100K",
+      brandPartnership: "$100K-$250K",
+      restaurantCollaboration: "$200K+"
+    },
+    servicesOffered: [
+      "Sponsored Content",
+      "Brand Partnerships",
+      "Restaurant Collaborations",
+      "Product Endorsements",
+      "Speaking Engagements"
+    ],
+    responseTime: "2-3 weeks",
+    minimumBudget: "$50K+",
     reviews: [
       {
         id: 113,
@@ -365,6 +526,22 @@ export const influencers = [
     verified: true,
     tags: ["Travel", "Adventure", "Culture", "Exploration"],
     engagement: "5.7%",
+    paidServices: true,
+    priceRange: "$$",
+    estimatedRates: {
+      sponsoredVideo: "$30K-$60K",
+      brandPartnership: "$50K-$100K",
+      travelCampaign: "$75K-$150K"
+    },
+    servicesOffered: [
+      "Sponsored Travel Videos",
+      "Brand Partnerships",
+      "Tourism Campaigns",
+      "Product Reviews",
+      "Speaking Engagements"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$25K+",
     reviews: [
       {
         id: 116,
@@ -403,6 +580,22 @@ export const influencers = [
     verified: true,
     tags: ["Real Estate", "Finance", "Investing", "Saving Money"],
     engagement: "4.9%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredVideo: "$60K-$120K",
+      brandPartnership: "$100K-$200K",
+      coursePromotion: "$50K-$100K"
+    },
+    servicesOffered: [
+      "Sponsored Videos",
+      "Brand Partnerships",
+      "Course Promotions",
+      "Financial Product Reviews",
+      "Speaking Engagements"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$50K+",
     reviews: [
       {
         id: 119,
@@ -441,6 +634,22 @@ export const influencers = [
     verified: true,
     tags: ["Finance", "Investing", "Money Tips", "Financial Literacy"],
     engagement: "7.3%",
+    paidServices: true,
+    priceRange: "$$",
+    estimatedRates: {
+      sponsoredPost: "$15K-$30K",
+      brandPartnership: "$25K-$50K",
+      productReview: "$10K-$20K"
+    },
+    servicesOffered: [
+      "Sponsored TikToks",
+      "Brand Partnerships",
+      "Product Reviews",
+      "Financial Tool Promotions",
+      "Speaking Engagements"
+    ],
+    responseTime: "3-7 days",
+    minimumBudget: "$10K+",
     reviews: [
       {
         id: 122,
@@ -479,6 +688,22 @@ export const influencers = [
     verified: true,
     tags: ["Travel", "Photography", "Lifestyle", "Adventure"],
     engagement: "4.2%",
+    paidServices: true,
+    priceRange: "$$",
+    estimatedRates: {
+      sponsoredPost: "$20K-$40K",
+      brandPartnership: "$35K-$70K",
+      travelCampaign: "$50K-$100K"
+    },
+    servicesOffered: [
+      "Sponsored Posts",
+      "Brand Partnerships",
+      "Travel Campaigns",
+      "Photography Services",
+      "Tourism Promotions"
+    ],
+    responseTime: "1 week",
+    minimumBudget: "$15K+",
     reviews: [
       {
         id: 125,
@@ -517,6 +742,22 @@ export const influencers = [
     verified: true,
     tags: ["Travel", "Photography", "Adventure", "Wanderlust"],
     engagement: "3.8%",
+    paidServices: true,
+    priceRange: "$$",
+    estimatedRates: {
+      sponsoredPost: "$18K-$35K",
+      brandPartnership: "$30K-$60K",
+      travelCampaign: "$45K-$90K"
+    },
+    servicesOffered: [
+      "Sponsored Posts",
+      "Brand Partnerships",
+      "Travel Campaigns",
+      "Photography Services",
+      "Tourism Board Collaborations"
+    ],
+    responseTime: "1 week",
+    minimumBudget: "$15K+",
     reviews: [
       {
         id: 128,
@@ -555,6 +796,22 @@ export const influencers = [
     verified: true,
     tags: ["Fitness", "Bodybuilding", "Science", "Training"],
     engagement: "6.4%",
+    paidServices: true,
+    priceRange: "$$",
+    estimatedRates: {
+      sponsoredVideo: "$35K-$70K",
+      brandPartnership: "$50K-$100K",
+      supplementEndorsement: "$60K-$120K"
+    },
+    servicesOffered: [
+      "Sponsored Videos",
+      "Brand Partnerships",
+      "Supplement Endorsements",
+      "Training Program Collaborations",
+      "Fitness Product Reviews"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$30K+",
     reviews: [
       {
         id: 131,
@@ -593,6 +850,23 @@ export const influencers = [
     verified: true,
     tags: ["Fashion", "Beauty", "Business", "Reality TV"],
     engagement: "1.9%",
+    paidServices: true,
+    priceRange: "$$$$",
+    estimatedRates: {
+      sponsoredPost: "$500K-$1M",
+      instagramStory: "$200K-$400K",
+      brandPartnership: "$1M-$5M",
+      productLaunch: "$2M+"
+    },
+    servicesOffered: [
+      "Sponsored Posts",
+      "Brand Partnerships",
+      "Product Launches",
+      "Event Appearances",
+      "Long-term Brand Ambassador"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$500K+",
     reviews: [
       {
         id: 134,
@@ -631,6 +905,22 @@ export const influencers = [
     verified: true,
     tags: ["Stocks", "Real Estate", "Investing", "Market Analysis"],
     engagement: "5.6%",
+    paidServices: true,
+    priceRange: "$$",
+    estimatedRates: {
+      sponsoredVideo: "$25K-$50K",
+      brandPartnership: "$40K-$80K",
+      coursePromotion: "$30K-$60K"
+    },
+    servicesOffered: [
+      "Sponsored Videos",
+      "Brand Partnerships",
+      "Course Promotions",
+      "Financial Product Reviews",
+      "Market Analysis Collaborations"
+    ],
+    responseTime: "3-7 days",
+    minimumBudget: "$20K+",
     reviews: [
       {
         id: 137,
@@ -669,6 +959,22 @@ export const influencers = [
     verified: true,
     tags: ["Street Food", "Travel", "Cuisine", "Food Culture"],
     engagement: "8.2%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredVideo: "$80K-$150K",
+      brandPartnership: "$120K-$250K",
+      tourismCampaign: "$150K-$300K"
+    },
+    servicesOffered: [
+      "Sponsored Food Videos",
+      "Brand Partnerships",
+      "Tourism Campaigns",
+      "Restaurant Promotions",
+      "Food Product Reviews"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$75K+",
     reviews: [
       {
         id: 140,
@@ -707,6 +1013,22 @@ export const influencers = [
     verified: true,
     tags: ["Tech", "Gadgets", "Reviews", "Innovation"],
     engagement: "6.7%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredVideo: "$100K-$200K",
+      productReview: "$80K-$150K",
+      brandPartnership: "$150K-$300K"
+    },
+    servicesOffered: [
+      "Sponsored Videos",
+      "Product Reviews",
+      "Brand Partnerships",
+      "Tech Launch Coverage",
+      "Speaking Engagements"
+    ],
+    responseTime: "2-3 weeks",
+    minimumBudget: "$75K+",
     reviews: [
       {
         id: 143,
@@ -745,6 +1067,22 @@ export const influencers = [
     verified: true,
     tags: ["Travel", "Culture", "Stories", "Inspiration"],
     engagement: "5.1%",
+    paidServices: true,
+    priceRange: "$$",
+    estimatedRates: {
+      sponsoredVideo: "$30K-$60K",
+      brandPartnership: "$50K-$100K",
+      tourismCampaign: "$60K-$120K"
+    },
+    servicesOffered: [
+      "Sponsored Videos",
+      "Brand Partnerships",
+      "Tourism Campaigns",
+      "Cultural Content",
+      "Speaking Engagements"
+    ],
+    responseTime: "1 week",
+    minimumBudget: "$25K+",
     reviews: [
       {
         id: 146,
@@ -783,6 +1121,23 @@ export const influencers = [
     verified: false,
     tags: ["Tech", "Startups", "Content Creation", "Innovation"],
     engagement: "12.4%",
+    paidServices: true,
+    priceRange: "$",
+    estimatedRates: {
+      sponsoredPost: "$100-$300",
+      instagramStory: "$50-$100",
+      productReview: "$150-$400",
+      consultationCall: "$100/hour"
+    },
+    servicesOffered: [
+      "Sponsored Posts",
+      "Product Reviews",
+      "Tech Consulting",
+      "Startup Advice",
+      "Content Strategy"
+    ],
+    responseTime: "24-48 hours",
+    minimumBudget: "$100+",
     reviews: [
       {
         id: 149,
@@ -821,6 +1176,22 @@ export const influencers = [
     verified: true,
     tags: ["Fitness", "Workouts", "Health", "Wellness"],
     engagement: "5.9%",
+    paidServices: true,
+    priceRange: "$$$",
+    estimatedRates: {
+      sponsoredPost: "$60K-$120K",
+      brandPartnership: "$100K-$200K",
+      productLaunch: "$150K-$300K"
+    },
+    servicesOffered: [
+      "Sponsored Posts",
+      "Brand Partnerships",
+      "Product Launches",
+      "Fitness Program Collaborations",
+      "Apparel Collections"
+    ],
+    responseTime: "1-2 weeks",
+    minimumBudget: "$50K+",
     reviews: [
       {
         id: 152,
@@ -859,6 +1230,24 @@ export const influencers = [
     verified: true,
     tags: ["Music", "Acting", "Beauty", "Mental Health"],
     engagement: "2.1%",
+    paidServices: true,
+    priceRange: "$$$$",
+    estimatedRates: {
+      sponsoredPost: "$800K-$1.5M",
+      instagramStory: "$300K-$600K",
+      brandPartnership: "$2M-$10M",
+      productLaunch: "$5M+"
+    },
+    servicesOffered: [
+      "Sponsored Posts",
+      "Brand Partnerships",
+      "Product Launches",
+      "Music Collaborations",
+      "Acting Roles",
+      "Event Appearances"
+    ],
+    responseTime: "2-4 weeks",
+    minimumBudget: "$750K+",
     reviews: [
       {
         id: 155,

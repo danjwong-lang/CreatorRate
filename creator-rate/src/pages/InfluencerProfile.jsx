@@ -1,212 +1,165 @@
-import { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { ArrowLeft, Star, ExternalLink, CheckCircle } from 'lucide-react';
 import { influencers } from '../data/influencers';
-import StarRating from '../components/StarRating';
-import ReviewCard from '../components/ReviewCard';
-import ReviewForm from '../components/ReviewForm';
 
 function InfluencerProfile() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const influencer = influencers.find(inf => inf.id === parseInt(id));
-
-  const [reviews, setReviews] = useState(influencer?.reviews || []);
-  const [showReviewForm, setShowReviewForm] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-
-  const handleReviewSubmit = (reviewData) => {
-    const newReview = {
-      id: reviews.length + 1,
-      author: 'Anonymous User',
-      rating: reviewData.overallRating,
-      date: new Date().toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-      }).replace(/\//g, '-'),
-      comment: reviewData.comment,
-      categoryRatings: reviewData.ratings,
-      isFollower: reviewData.isFollower
-    };
-
-    setReviews([newReview, ...reviews]);
-    setShowReviewForm(false);
-    setShowSuccessMessage(true);
-
-    // Hide success message after 5 seconds
-    setTimeout(() => {
-      setShowSuccessMessage(false);
-    }, 5000);
-  };
 
   if (!influencer) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Influencer not found</h2>
-          <Link to="/" className="text-purple-600 hover:text-purple-700 font-medium">
-            Return to home
-          </Link>
-        </div>
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <p className="text-gray-600">Influencer not found</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Back Button */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <button
-            onClick={() => navigate('/')}
-            className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back to all influencers
-          </button>
-        </div>
-      </div>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6">
+        <ArrowLeft className="w-4 h-4 mr-2" />
+        Back to all influencers
+      </Link>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Profile Header */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-          <div className="md:flex">
-            {/* Avatar Section */}
-            <div className="md:w-1/3 bg-gradient-to-br from-purple-100 to-pink-100 p-8 flex items-center justify-center">
-              <div className="text-center">
-                <img
-                  src={influencer.avatar}
-                  alt={influencer.name}
-                  className="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg"
-                />
+      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        {/* Header Section */}
+        <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white">
+          <div className="flex items-start gap-6">
+            <img 
+              src={influencer.avatar} 
+              alt={influencer.name}
+              className="w-32 h-32 rounded-lg object-cover border-4 border-white shadow-lg"
+            />
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-2">
+                <h1 className="text-3xl font-bold">{influencer.name}</h1>
                 {influencer.verified && (
-                  <div className="flex items-center justify-center space-x-1 text-blue-600">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm font-medium">Verified</span>
-                  </div>
+                  <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
+                    ✓ Verified
+                  </span>
                 )}
               </div>
-            </div>
+              <p className="text-xl mb-4 opacity-90">{influencer.handle}</p>
+              
+              <div className="flex items-center gap-2 mb-4">
+                <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                <span className="text-lg font-semibold">{influencer.rating}</span>
+                <span className="opacity-90">({influencer.reviewCount} reviews)</span>
+              </div>
 
-            {/* Info Section */}
-            <div className="md:w-2/3 p-8">
-              <div className="mb-4">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">{influencer.name}</h1>
-                <p className="text-lg text-gray-600 mb-3">{influencer.handle}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
-                    {influencer.category}
+              <div className="flex gap-6 text-lg mb-4">
+                <span><strong>{influencer.followers}</strong> followers</span>
+                <span>|</span>
+                <span><strong>{influencer.platform}</strong></span>
+                <span>|</span>
+                <span><strong>{influencer.category}</strong></span>
+                <span>|</span>
+                <span>Engagement: <strong>{influencer.engagement}</strong></span>
+              </div>
+
+              <p className="text-lg leading-relaxed mb-4 opacity-95">{influencer.bio}</p>
+
+              <div className="flex gap-2 flex-wrap">
+                {influencer.tags.map((tag, index) => (
+                  <span key={index} className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
+                    {tag}
                   </span>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                    {influencer.platform}
-                  </span>
-                </div>
+                ))}
               </div>
-
-              <p className="text-gray-700 mb-6">{influencer.bio}</p>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <p className="text-xs text-gray-600 uppercase tracking-wide mb-1">Followers</p>
-                  <p className="text-2xl font-bold text-gray-900">{influencer.followers}</p>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <p className="text-xs text-gray-600 uppercase tracking-wide mb-1">Engagement</p>
-                  <p className="text-2xl font-bold text-gray-900">{influencer.engagement}</p>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4 col-span-2 sm:col-span-1">
-                  <p className="text-xs text-gray-600 uppercase tracking-wide mb-1">Reviews</p>
-                  <p className="text-2xl font-bold text-gray-900">{influencer.reviewCount}</p>
-                </div>
-              </div>
-
-              {/* Rating */}
-              <div className="border-t border-gray-200 pt-6">
-                <div className="flex items-center space-x-4">
-                  <div>
-                    <p className="text-5xl font-bold text-gray-900">{influencer.rating.toFixed(1)}</p>
-                  </div>
-                  <div>
-                    <StarRating rating={influencer.rating} size="lg" showNumber={false} />
-                    <p className="text-sm text-gray-600 mt-1">Based on {influencer.reviewCount} reviews</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Tags */}
-          <div className="border-t border-gray-200 px-8 py-4 bg-gray-50">
-            <div className="flex flex-wrap gap-2">
-              {influencer.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-white text-gray-700 border border-gray-300"
-                >
-                  #{tag}
-                </span>
-              ))}
             </div>
           </div>
         </div>
 
+        {/* Services Section */}
+        {influencer.paidServices ? (
+          <div className="p-8 bg-green-50 border-2 border-green-500 m-6 rounded-lg">
+            <div className="flex justify-between items-center mb-6">
+              <div className="flex items-center gap-3">
+                <h2 className="text-2xl font-bold text-green-800">💰 Services & Pricing</h2>
+                <span className="text-2xl font-bold text-green-600">{influencer.priceRange}</span>
+              </div>
+              <span className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                🎯 Offers Paid Services
+              </span>
+            </div>
+
+            {/* Rates Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              {Object.entries(influencer.estimatedRates).map(([service, rate]) => (
+                <div key={service} className="bg-white p-5 rounded-lg border-l-4 border-green-500">
+                  <div className="font-semibold text-gray-700 mb-2">
+                    {service.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                  </div>
+                  <div className="text-xl font-bold text-green-600">{rate}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Services List */}
+            <div className="bg-white p-6 rounded-lg mb-6">
+              <h3 className="text-xl font-bold text-green-800 mb-4">Available Services</h3>
+              <div className="space-y-3">
+                {influencer.servicesOffered.map((service, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span className="text-lg">{service}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Meta Info */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="bg-white p-4 rounded-lg">
+                <div className="text-sm text-gray-600 uppercase tracking-wide mb-1">Response Time</div>
+                <div className="text-lg font-semibold text-green-800">{influencer.responseTime}</div>
+              </div>
+              <div className="bg-white p-4 rounded-lg">
+                <div className="text-sm text-gray-600 uppercase tracking-wide mb-1">Minimum Budget</div>
+                <div className="text-lg font-semibold text-green-800">{influencer.minimumBudget}</div>
+              </div>
+            </div>
+
+            {/* Contact Button */}
+            <button className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-lg text-lg transition-colors">
+              📧 Contact for Business Inquiries
+            </button>
+          </div>
+        ) : (
+          <div className="p-8 bg-gray-50 border-2 border-gray-300 m-6 rounded-lg text-center">
+            <div className="text-5xl mb-4 opacity-50">ℹ️</div>
+            <p className="text-xl text-gray-600">This influencer does not currently offer paid services.</p>
+          </div>
+        )}
+
         {/* Reviews Section */}
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">
-              Reviews ({reviews.length})
-            </h2>
-            {!showReviewForm && (
-              <button
-                onClick={() => setShowReviewForm(true)}
-                className="bg-purple-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-purple-700 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-              >
-                Write a Review
-              </button>
-            )}
+        <div className="p-8 border-t-2 border-gray-200">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold">Reviews ({influencer.reviewCount})</h2>
           </div>
 
-          {/* Success Message */}
-          {showSuccessMessage && (
-            <div className="mb-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
-              <div className="flex items-center">
-                <svg className="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <div>
-                  <p className="text-sm font-semibold text-green-800">Review submitted successfully!</p>
-                  <p className="text-xs text-green-700 mt-1">Your review has been added to this creator's profile.</p>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Review Form */}
-          {showReviewForm && (
-            <div className="mb-6">
-              <ReviewForm
-                onSubmit={handleReviewSubmit}
-                onCancel={() => setShowReviewForm(false)}
-              />
-            </div>
-          )}
-
-          {/* Reviews List */}
           <div className="space-y-4">
-            {reviews.length > 0 ? (
-              reviews.map((review) => (
-                <ReviewCard key={review.id} review={review} />
-              ))
-            ) : (
-              <div className="text-center py-8 text-gray-500">
-                <p>No reviews yet. Be the first to review this creator!</p>
+            {influencer.reviews.map((review) => (
+              <div key={review.id} className="bg-gray-50 p-5 rounded-lg">
+                <div className="flex justify-between mb-2">
+                  <span className="font-semibold text-gray-700">{review.author}</span>
+                  <span className="text-sm text-gray-500">{review.date}</span>
+                </div>
+                <div className="flex items-center mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`w-4 h-4 ${
+                        i < review.rating
+                          ? 'fill-yellow-400 text-yellow-400'
+                          : 'text-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <p className="text-gray-700 leading-relaxed">{review.comment}</p>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </div>
