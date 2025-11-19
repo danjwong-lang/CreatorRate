@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Star, ExternalLink, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Star, CheckCircle } from 'lucide-react';
 import { influencers } from '../data/influencers';
 
 function InfluencerProfile() {
@@ -61,7 +61,14 @@ function InfluencerProfile() {
 
               <div className="flex gap-2 flex-wrap">
                 {influencer.tags.map((tag, index) => (
-                  <span key={index} className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
+                  <span 
+                    key={index} 
+                    className="px-3 py-1 rounded-full text-sm font-medium"
+                    style={{ 
+                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                      color: '#ffffff'
+                    }}
+                  >
                     {tag}
                   </span>
                 ))}
